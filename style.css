@@ -1,0 +1,113 @@
+/* Paleta inspirada en UNICEF Guatemala */
+:root{
+  --azul: #1cabe2;
+  --azul-oscuro: #003865;
+  --verde: #A7CF3A;
+  --amarillo: #F6A800;
+  --neutro: #f6f8f9;
+  --text: #0b2b2a;
+  --card: #ffffff;
+  --glass: rgba(255,255,255,0.06);
+  --radius: 14px;
+  --shadow: 0 8px 24px rgba(8,16,12,0.35);
+}
+
+/* Reset */
+*{box-sizing:border-box;}
+html,body{height:100%;}
+body{
+  margin:0;
+  font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  background: linear-gradient(180deg, #f4fbff 0%, #f6f8f9 100%);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+.wrap{max-width:1100px;margin:0 auto;padding:1rem;}
+
+/* Header */
+.site-header{
+  background:linear-gradient(90deg,var(--azul),var(--azul-oscuro));
+  color:white;
+  padding:14px 0;
+  box-shadow: 0 6px 18px rgba(2,12,14,0.18);
+  position:sticky;top:0;z-index:40;
+}
+.header-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.brand{display:flex;flex-direction:column;gap:6px;}
+.logo-pair{display:flex;gap:10px;align-items:center;}
+.logo.small{height:56px;border-radius:8px;background:white;padding:6px;object-fit:contain;}
+
+/* Nav */
+.main-nav ul{list-style:none;margin:0;padding:0;display:flex;gap:16px;align-items:center;}
+.main-nav a{color:white;text-decoration:none;padding:8px 12px;border-radius:10px;font-weight:600;}
+.main-nav a:hover, .main-nav a.active{background:rgba(255,255,255,0.12);}
+
+/* Hamburger for mobile */
+.hamburger{display:none;background:transparent;border:0;color:white;font-size:26px;cursor:pointer;}
+
+/* Panels */
+.panel{background:var(--card);border-radius:var(--radius);padding:18px;margin:18px 0;box-shadow:var(--shadow);}
+
+/* Inicio panel */
+.inicio-panel .grid{display:grid;grid-template-columns:1fr 420px;gap:20px;align-items:center;}
+.inicio-panel .lead{font-size:1.05rem;color:#03464e;margin-top:6px;}
+.video-wrap{border-radius:12px;overflow:hidden;border:1px solid rgba(2,40,36,0.06);}
+.video-wrap iframe{width:100%;height:100%;min-height:240px;border:0;}
+
+/* Buttons */
+.btn{display:inline-block;padding:10px 16px;border-radius:12px;background:linear-gradient(180deg,var(--verde),#82d85a);color:var(--text);font-weight:700;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,0.12);}
+.btn.outline{background:transparent;border:2px solid rgba(3,70,80,0.06);color:var(--azul-oscuro);}
+
+/* Cards panel */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:12px;}
+.card{padding:16px;border-radius:12px;border:1px solid rgba(2,20,18,0.04);background:linear-gradient(180deg,white 0%, #f7fcfb 100%);box-shadow: 0 6px 18px rgba(4,20,18,0.04);}
+.card h3{margin-top:0;color:var(--azul-oscuro);}
+
+/* Recetario */
+.recetario-panel .recetas-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:12px;}
+.receta-card{border-radius:12px;overflow:hidden;border:1px solid rgba(2,20,18,0.04);background:linear-gradient(180deg,#fff,#fbfffc);display:flex;flex-direction:column;align-items:stretch;}
+.receta-card img{width:100%;height:160px;object-fit:cover;}
+.receta-card h4{margin:12px;padding:0 12px;}
+.receta-card p{padding:0 12px 12px;color:#456;}
+.receta-card .btn.small{margin:12px;border-radius:10px;align-self:flex-start;margin-left:12px;padding:8px 12px;}
+
+/* Contact */
+.contact-panel p a{color:var(--azul-oscuro);font-weight:700;}
+
+/* Footer */
+.site-footer{padding:18px 0;text-align:center;color:#072;}
+
+/* Responsive */
+@media (max-width:980px){
+  .inicio-panel .grid{grid-template-columns:1fr;}
+  .cards{grid-template-columns:repeat(2,1fr);}
+  .recetario-panel .recetas-grid{grid-template-columns:repeat(2,1fr);}
+  .hamburger{display:block;}
+  .main-nav{display:none;position:absolute;top:72px;right:20px;background:linear-gradient(180deg,var(--azul),var(--azul-oscuro));padding:12px;border-radius:10px;}
+  .main-nav.open{display:block;}
+}
+
+@media (max-width:520px){
+  .cards{grid-template-columns:1fr;}
+  .recetario-panel .recetas-grid{grid-template-columns:1fr;}
+  .logo.small{height:44px;}
+  .video-wrap iframe{min-height:200px;}
+}
+
+.video-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.video-center video {
+  width: 100%;
+  max-width: 900px; /* tamaño grande pero limitado */
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
